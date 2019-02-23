@@ -1,0 +1,42 @@
+<style type="text/css">
+    .sinborde {
+        border: 0;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#btn_conf_cuenta").bind("click",validar_datos);
+        $(".sinborde").bind("change",actualizar_datos_perfil);  
+    });
+</script>
+
+<form id="from_datos_personales" name="from_datos_personales" method="POST">
+    <h3>Datos Personales.</h3>
+
+    <input type="text" id="nombres" class="form-control sinborde" name=""><br>
+    <input type="text" id="apellidos" class="form-control sinborde" name=""><br>
+    <input type="number" id="telefono" class="form-control sinborde" name=""><br>
+    <input type="email" id="correo" class="form-control sinborde" name=""><br>
+    <select id="sexo" class="form-control sinborde">
+        <option></option>
+    </select><hr>
+    <input type="button" name="" value="Actualizar" id="btn_actualizar" class="btn btn-info" style="display: none;">
+                    
+    <h3>Configuracion de la cuenta.</h3>
+
+    <input type="button" id="btn_conf_cuenta" class="btn sinborde" name="" value="Actualizar datos de la cuenta"><br>
+</form>
+
+<div>
+    <div id="validacion_contar" style="display: none;" >
+        <h2>Validar Contraseña</h2>
+
+        <input type="password" id="int_de_validacion" name="" class=" form-control sinborde" placeholder="escriba su contraseña"><br>
+
+        <input type="button" id="btn_validar_datos" class="btn sinborde" name="" value="Validar"><br>   
+    </div>
+
+    <div id="act_datos_usuario" class="col-lg-5"></div>
+</div>
+          

@@ -1,0 +1,81 @@
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    $("#enviar_mensaje_m").bind("click",enviar_mensaje_m);
+
+	$("#btn_close").bind("click", function(){
+		$("#div_dinamico").html("");
+		$("#foto_perfil").show();
+	});
+
+	$("#div_chat_m").hide();
+
+    $("#btn_close_chat").bind("click",function(){
+        
+        mensajes();
+    });
+
+	listado_chat();
+});
+</script>
+
+<style type="text/css">
+	
+	#chat_m{
+		height: 300px; 
+		overflow: auto;
+		padding: 20px; 
+		border-radius: 10px; 
+		background: white; 
+		margin-top: 10px; 
+		margin: 10px;
+	}
+
+    #chat_m::-webkit-scrollbar {
+        display: none;
+    }
+
+    #div_close{
+        text-align: right; 
+        padding-top: 10px;
+    } 
+
+    #div_cont_nombre{
+        background:#CEE3F6; 
+        border-top-left-radius:5px;
+    }
+
+    #div_cont_close{
+        background:#CEE3F6;
+        text-align: right;
+        border-top-right-radius: 5px ;
+    }
+
+    #nombre_c{
+        color:#337ab7;
+    }
+
+    #txt_mensaje{
+        height: 34px;
+    }
+</style>
+
+<div class="col-xs-12">
+	<div id="div_close"><a href="#" id="btn_close"><img src="img/close.png" style="width: 8%;"></a></div>
+
+	<div id="conectados_m"></div>
+</div>
+
+
+<div id="div_chat_m">
+	<div  style="background:#CEE3F6; border-radius:5px;">
+       <div id="div_cont_nombre" class="col-xs-10"><p id="nombre_c" style=""></p> </div><div id="div_cont_close" class="col-xs-2" style=""><p><a href="#" id="btn_close_chat">x</a></p></div>
+	</div>
+
+	<div id="chat_m"></div>
+    <div>
+        <div class="col-xs-10"><textarea id="txt_mensaje" placeholder="Escribir mensaje" class="form-control"></textarea></div> <div class="col-xs-2"><a href="#" id="enviar_mensaje_m"><img src="img/submit.png" style="width: 100%"></a></div>
+    </div>
+   
+</div>

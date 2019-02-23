@@ -1,0 +1,83 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+  i{
+    color: #337ab7;
+  }
+  i:hover{
+    color: #EAEDED;
+  }
+  #title_usuario{
+    color: #337ab7;
+  }
+  #title_usuario :hover{
+    color:  #EAEDED;
+  }
+  .btn_menu :hover
+  {
+    background: red;
+  }
+  .navbar-inverse .navbar-toggle:hover{
+    background: #337ab7;
+  }
+  .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+    background: #337ab7;
+  }
+  
+  @media screen and (max-width: 600px){
+    #menu ul li a{
+      display: inline;
+    }
+  }
+
+  @media screen and (max-width: 800px){
+    #menu ul li a{
+      display: inline;
+    }
+    #img_logo{
+      width: 10%;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    #mesajes {
+      display: none;
+    }
+    #img_logo{
+      width: 10%;
+    }
+  }
+</style>
+
+<nav class="navbar navbar-inverse"   style="background:#CEE3F6; border-color:#CEE3F6 ;">
+  <div class="container-fluid" >
+    <div class="navbar-header " style="background:#CEE3F6;">
+      <div class="col-xs-6 col-md-4 col-lg-4 " style="text-align: left;"><img src="img/milogo.png" style="width: 50%; margin-top: 7px;" id="img_logo"></div>
+      <div class="col-xs-6"><a class="navbar-brand" href="inicio.php" id="title_usuario"></a></div>
+    </div>
+            
+    <div class="" id="myNavbar" style="border-color:#CEE3F6;">
+      <form class="navbar-form navbar-right" role="form" style="border-color:#CEE3F6;">
+        <div  id="menu" >              
+          <ul id="ul_menu" style="" class="nav navbar-nav" >
+
+            <li><a id="home"><i class="fas fa-home" ></i></a></li> 
+
+            <li><a id="cargar_datos_usuario"><i class="fas fa-user-tie"></i></a></li> 
+                        
+            <li ><a id="mesajes"><i class="fas fa-comment"></i></a></li>
+
+            <li><a id="buscar_personas"><i class="fas fa-search"></i></a></li> 
+
+            <li><a id="amigos" ><i class="fas fa-user-friends"></i></a></li> 
+                        
+            <li><a href="cerrar_session.php"><i class="fas fa-sign-out-alt"></i></a>
+              
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>

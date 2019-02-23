@@ -1,0 +1,93 @@
+<script type="text/javascript">
+	var codigo_amigo="";
+
+	$(document).ready(function(){
+		$("#btn_atras").bind("click",function(){
+			$("#div_dinamico").load("templates/mis_amigos.html");
+		});
+
+		$("#btn-delete").bind("click",confirm_eliminar_amigo);
+	});
+
+	function confirm_eliminar_amigo(){
+		Lobibox.confirm({
+			msg: "Desea eliminar esta persona",
+		});
+
+		$(".lobibox-btn-yes").bind("click",function(){
+			eliminar_amigo();
+		});
+	}
+
+
+	function eliminar_amigo(){
+			$.ajax({
+		    type: 'POST',
+		    async: true,
+		    url: 'ajax/eliminar_amigos.php',
+		    data: {
+		      usuario,
+		      codigo_amigo
+		    },
+		    success: function(data){
+		     if (data.resultado==1) {
+		     	Lobibox.alert("success",
+				{
+					msg: "Eliminado correctamente"
+				});
+
+		     	$(".lobibox-btn").bind("click", verificar);
+
+		     }
+		     else{
+		     	Lobibox.alert("error",
+				{
+					msg: "Eliminado correctamente"
+				});
+		     }
+		    },
+		    dataType: 'json'
+		});							
+	}
+
+	function verificar(){
+		$("#div_dinamico").load("templates/mis_amigos.html");
+	}		
+</script>
+
+<style type="text/css">
+	#contenedor-img{
+		width: 40%;
+		margin: auto; 
+	}
+
+	.lobibox.lobibox-confirm .lobibox-footer{
+		background-color: #CEE3F6;
+	}
+	.lobibox.lobibox-confirm .lobibox-header{
+		background-color: #CEE3F6;
+	}
+	.lobibox.lobibox-confirm .lobibox-body .lobibox-icon{
+		color: #337ab7;
+	}
+	.lobibox .lobibox-btn.lobibox-btn-yes{
+		background: #337ab7;
+	}
+
+	.lobibox .lobibox-btn.lobibox-btn-yes.active, .lobibox .lobibox-btn.lobibox-btn-yes.focus, .lobibox .lobibox-btn.lobibox-btn-yes:active, .lobibox .lobibox-btn.lobibox-btn-yes:focus, .lobibox .lobibox-btn.lobibox-btn-yes:hover, .open>.dropdown-toggle.lobibox .lobibox-btn.lobibox-btn-yes{
+		background-color:  #337ab7;
+	}
+</style>
+
+<div class="col-lg-12" id="contenedor">
+	<div><a href="#" id="btn_atras"><img src="img/atras.png" style="width: 5%;"></a></div>
+	<div id="contenedor-img"></div>
+
+	<div id="contenedor-nombre" style="margin: auto;text-align: center;"></div>
+
+	<div id="contenedor-otros-datos" class="col-lg-12">
+		<div class="col-lg-6" id="div_telefono" style="text-align: center;"></div>
+		<div class="col-lg-6" id="div_correo" style="text-align: center;"></div>
+		<div  class="col-lg-6"  style="text-align: center;"><button class="btn btn-danger" id="btn-delete">Eliminar</button></div>	
+	</div>
+</div>
