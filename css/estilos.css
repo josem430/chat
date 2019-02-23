@@ -1,0 +1,24 @@
+#div_seccion{
+	margin: 5px;
+}
+#input_seccion{
+	border-radius: 20px;	
+}
+
+#div_registrar{
+	margin: 5px;
+}
+#input_registar{
+	border-radius: 20px;
+	color: #00BFFF;
+}
+#txt_usuario,#txt_password,#btn-iniciar
+{
+	border-radius: 20px;
+}
+
+#btn_sig_log{
+	border-radius: 20px;
+}
+
+
